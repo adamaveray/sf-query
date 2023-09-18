@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpunit xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <testsuites>
+    <testsuite name="SF-Connect">
+      <directory>packages/sfconnect/tests</directory>
+    </testsuite>
+    <testsuite name="SF-Query">
+      <directory>packages/sfquery/tests</directory>
+    </testsuite>
+  </testsuites>
+  <coverage>
+    <include>
+      <directory suffix=".php">packages/sfconnect/src</directory>
+      <directory suffix=".php">packages/sfquery/src</directory>
+    </include>
+  </coverage>
+</phpunit>

@@ -1,0 +1,5 @@
+/node_modules/
+/vendor/
+/packages/*/node_modules/
+/packages/*/vendor/
+/.phpunit*

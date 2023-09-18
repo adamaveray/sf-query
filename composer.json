@@ -1,0 +1,35 @@
+{
+  "authors": [
+    {
+      "name": "Adam Averay",
+      "homepage": "https://adamaveray.com.au/"
+    }
+  ],
+  "require": {
+    "php": ">=8.2",
+    "symfony/http-client": "^6.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.3",
+    "roave/security-advisories": "dev-latest",
+    "symfony/var-dumper": "^6.3",
+    "symplify/monorepo-builder": "11.2.4.72"
+  },
+  "autoload": {
+    "files": [
+      "packages/sfconnect/src/lib.php"
+    ],
+    "psr-4": {
+      "Averay\\SfConnect\\": "packages/sfconnect/src/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "packages/sfconnect"
+    }
+  ],
+  "replace": {
+    "averay/sfconnect": "self.version"
+  }
+}

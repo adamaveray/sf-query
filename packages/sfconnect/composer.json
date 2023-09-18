@@ -1,0 +1,35 @@
+{
+  "name": "averay/sfconnect",
+  "description": "A robust connection interface to the Salesforce REST API.",
+  "version": "0.0.1",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Adam Averay",
+      "homepage": "https://adamaveray.com.au/"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Averay\\SfConnect\\": "src/"
+    },
+    "files": [
+      "src/lib.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Averay\\SfConnect\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=8.2",
+    "symfony/http-client": "^6.0"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "phpunit/phpunit": "^10.3",
+    "symfony/var-dumper": "^6.3"
+  }
+}

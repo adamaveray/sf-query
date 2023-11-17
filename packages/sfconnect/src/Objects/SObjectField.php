@@ -45,7 +45,7 @@ use Averay\SfConnect\Data\SObjectFieldType;
  * @property-read bool $namePointing
  * @property-read bool $nillable
  * @property-read bool $permissionable
- * @property-read array $picklistValues
+ * @property-read list<PicklistValue> $picklistValues
  * @property-read bool $polymorphicForeignKey
  * @property-read int $precision
  * @property-read bool $queryByDistance
@@ -69,6 +69,7 @@ readonly final class SObjectField extends AbstractObject implements \JsonSeriali
   public function __construct(array $values)
   {
     $values['type'] = SObjectFieldType::from($values['type']);
+    $values['picklistValues'] = array_map(PicklistValue::createFromData(...), $values['picklistValues']);
     parent::__construct($values);
   }
 

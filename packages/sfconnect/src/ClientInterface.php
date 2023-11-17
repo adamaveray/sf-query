@@ -7,6 +7,7 @@ use Symfony\Contracts\HttpClient\Exception\ExceptionInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
 interface ClientInterface extends
+  Slices\CollectionsInterface,
   Slices\MetaInterface,
   Slices\OrganizationInterface,
   Slices\QueryingInterface,

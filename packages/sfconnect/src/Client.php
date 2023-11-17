@@ -12,6 +12,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 
 class Client implements ClientInterface
 {
+  use Slices\CollectionsSlice;
   use Slices\MetaSlice;
   use Slices\OrganizationSlice;
   use Slices\QueryingSlice;

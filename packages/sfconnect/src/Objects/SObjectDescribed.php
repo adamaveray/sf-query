@@ -3,18 +3,15 @@ declare(strict_types=1);
 
 namespace Averay\SfConnect\Objects;
 
-use Averay\SfConnect\ClientInterface;
-use Averay\SfConnect\Data\SObjectUrl;
-
 /**
  * @property-read array<string,SObjectField> $fields
  */
 readonly final class SObjectDescribed extends SObject
 {
-  public function __construct(array $values, ClientInterface $client)
+  public function __construct(array $values)
   {
     $values['fields'] = self::processFields($values['fields']);
-    parent::__construct($values, $client);
+    parent::__construct($values);
   }
 
   /**

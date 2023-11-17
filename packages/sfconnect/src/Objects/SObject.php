@@ -3,10 +3,11 @@ declare(strict_types=1);
 
 namespace Averay\SfConnect\Objects;
 
-use Averay\SfConnect\ClientInterface;
 use Averay\SfConnect\Data\SObjectUrl;
 
 /**
+ * @psalm-consistent-constructor
+ *
  * @property-read bool $activateable
  * @property-read string|null $associateEntityType
  * @property-read string|null $associateParentEntity
@@ -38,11 +39,6 @@ use Averay\SfConnect\Data\SObjectUrl;
  */
 readonly class SObject extends AbstractObject implements \JsonSerializable
 {
-  public function __construct(array $values, private ClientInterface $client)
-  {
-    parent::__construct($values);
-  }
-
   protected function getUniqueIdentifier(): string
   {
     return $this->name;
@@ -58,8 +54,8 @@ readonly class SObject extends AbstractObject implements \JsonSerializable
     return $this->values;
   }
 
-  public static function createFromJson(array $values, ClientInterface $client): static
+  public static function createFromJson(array $values): static
   {
-    return new static($values, $client);
+    return new static($values);
   }
 }

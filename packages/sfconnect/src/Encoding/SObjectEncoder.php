@@ -14,7 +14,7 @@ class SObjectEncoder implements EncoderInterface, DecoderInterface
   private const PICKLIST_SEPARATOR = ';';
 
   private const DATE_FORMAT_DATE = 'Y-m-d';
-  private const DATE_FORMAT_DATETIME = 'Y-m-dTH:i:sZ';
+  private const DATE_FORMAT_DATETIME = 'Y-m-d\\TH:i:s\\Z';
 
   public function encode(SObjectDescribed $sobject, array $decoded): array
   {

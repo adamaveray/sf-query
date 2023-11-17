@@ -5,6 +5,6 @@
   },
   "devDependencies": {
     "@averay/codeformat": "^0.1.14",
-    "@prettier/plugin-php": "^0.19.6"
+    "@prettier/plugin-php": "^0.21.0"
   }
 }

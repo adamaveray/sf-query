@@ -10,10 +10,10 @@
     "symfony/http-client": "^6.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "^10.3",
+    "phpunit/phpunit": "^10.4",
     "roave/security-advisories": "dev-latest",
     "symfony/var-dumper": "^6.3",
-    "symplify/monorepo-builder": "11.2.4.72"
+    "symplify/monorepo-builder": "^11.2"
   },
   "autoload": {
     "files": [
@@ -21,6 +21,11 @@
     ],
     "psr-4": {
       "Averay\\SfConnect\\": "packages/sfconnect/src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Averay\\SfConnect\\Tests\\": "packages/sfconnect/tests/"
     }
   },
   "repositories": [

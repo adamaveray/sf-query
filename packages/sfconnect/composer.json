@@ -29,7 +29,7 @@
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
-    "phpunit/phpunit": "^10.3",
+    "phpunit/phpunit": "^10.4",
     "symfony/var-dumper": "^6.3"
   }
 }

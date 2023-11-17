@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Averay\SfConnect;
 
+use Averay\SfConnect\Objects\Record;
 use Averay\SfConnect\Objects\SObject;
 
 /**
@@ -12,6 +13,15 @@ use Averay\SfConnect\Objects\SObject;
 function getSObjectName(string|SObject $sobject): string
 {
   return $sobject instanceof SObject ? $sobject->name : $sobject;
+}
+
+/**
+ * @internal
+ * @pure
+ */
+function getRecordId(string|Record $record): string
+{
+  return $record instanceof Record ? $record->Id : $record;
 }
 
 /**

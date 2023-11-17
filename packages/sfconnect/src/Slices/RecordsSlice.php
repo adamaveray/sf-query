@@ -8,6 +8,7 @@ use Averay\SfConnect\Objects\Record;
 use Averay\SfConnect\Objects\SObject;
 use Averay\SfConnect\Objects\SObjectField;
 use function Averay\SfConnect\formatUrl;
+use function Averay\SfConnect\getRecordId;
 use function Averay\SfConnect\getSObjectName;
 
 /**
@@ -22,7 +23,7 @@ trait RecordsSlice
       'GET',
       formatUrl('/sobjects/{sobject}/{id}', [
         'sobject' => getSObjectName($sobject),
-        'id' => $record instanceof Record ? $record->Id : $record,
+        'id' => getRecordId($record),
       ]),
       ['query' => ['fields' => implode(',', self::normaliseFields($fields))]],
     );
@@ -48,7 +49,7 @@ trait RecordsSlice
       'PATCH',
       formatUrl('/sobjects/{sobject}/{id}', [
         'sobject' => getSObjectName($sobject),
-        'id' => $record instanceof Record ? $record->Id : $record,
+        'id' => getRecordId($record),
       ]),
       ['json' => $values],
     );
@@ -60,7 +61,7 @@ trait RecordsSlice
       'DELETE',
       formatUrl('/sobjects/{sobject}/{id}', [
         'sobject' => getSObjectName($sobject),
-        'id' => $record instanceof Record ? $record->Id : $record,
+        'id' => getRecordId($record),
       ]),
     );
   }
@@ -117,7 +118,7 @@ trait RecordsSlice
       'GET',
       formatUrl('/sobjects/{sobject}/{id}/{blobField}', [
         'sobject' => getSObjectName($sobject),
-        'id' => $record instanceof Record ? $record->Id : $record,
+        'id' => getRecordId($record),
         'blobField' => $blobField,
       ]),
     )->getContent();

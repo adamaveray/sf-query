@@ -38,13 +38,19 @@ class SObjectEncoder implements EncoderInterface, DecoderInterface
 
   private static function encodeField(SObjectField $field, mixed $value): mixed
   {
+    static $tz = new \DateTimeZone('UTC');
+
     if ($value === null) {
       return null;
     }
 
     return match ($field->type) {
-      FieldType::Date => $value->format(self::DATE_FORMAT_DATE),
-      FieldType::DateTime => $value->format(self::DATE_FORMAT_DATETIME),
+      FieldType::Date => \DateTimeImmutable::createFromInterface($value)
+        ->setTimezone($tz)
+        ->format(self::DATE_FORMAT_DATE),
+      FieldType::DateTime => \DateTimeImmutable::createFromInterface($value)
+        ->setTimezone($tz)
+        ->format(self::DATE_FORMAT_DATETIME),
       FieldType::MultiPicklist => implode(self::PICKLIST_SEPARATOR, $value),
       default => $value,
     };

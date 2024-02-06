@@ -82,6 +82,10 @@ readonly final class SObjectField extends AbstractObject implements \JsonSeriali
   {
     $values = $this->values;
     $values['type'] = $values['type']->value;
+    $values['picklistValues'] = array_map(
+      static fn(PicklistValue $picklistValue): array => $picklistValue->jsonSerialize(),
+      $values['picklistValues'],
+    );
     return $values;
   }
 }

@@ -20,7 +20,7 @@ trait SObjectsSlice
     $data = $this->getResponse('GET', '/sobjects/');
     $objects = [];
     foreach ($data['sobjects'] as $item) {
-      $object = new SObject($item, $this);
+      $object = new SObject($item);
       $objects[$object->name] = $object;
     }
     return $objects;
@@ -32,7 +32,7 @@ trait SObjectsSlice
       'GET',
       formatUrl('/sobjects/{sobject}/' . ($described ? 'describe/' : ''), ['sobject' => $name]),
     );
-    return $described ? new SObjectDescribed($data, $this) : new SObject($data['objectDescribe'], $this);
+    return $described ? new SObjectDescribed($data) : new SObject($data['objectDescribe']);
   }
 
   public function getSObjectDeleted(string|SObject $sobject, \DateTimeInterface $start, \DateTimeInterface $end): array

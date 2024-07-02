@@ -12,22 +12,22 @@ interface QueryingInterface
   /**
    * @see https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_query.htm
    */
-  public function query(string|QueryInterface $query): QueryHandle;
+  public function query(string|QueryInterface $query, ?int $batchSize = null): QueryHandle;
 
   /**
    * @see https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_query_more_results.htm
    */
-  public function queryMore(string|QueryHandle $queryLocator): QueryHandle;
+  public function queryMore(string|QueryHandle $queryLocator, ?int $batchSize = null): QueryHandle;
 
   /**
    * @see https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_queryall.htm
    */
-  public function queryAll(string|QueryInterface $query): QueryHandle;
+  public function queryAll(string|QueryInterface $query, ?int $batchSize = null): QueryHandle;
 
   /**
    * @see https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_queryall_more_results.htm
    */
-  public function queryAllMore(string|QueryHandle $queryLocator): QueryHandle;
+  public function queryAllMore(string|QueryHandle $queryLocator, ?int $batchSize = null): QueryHandle;
 
   /**
    * @see https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_query_performance_feedback.htm

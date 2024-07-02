@@ -52,6 +52,7 @@ class SObjectEncoder implements EncoderInterface, DecoderInterface
         ->setTimezone($tz)
         ->format(self::DATE_FORMAT_DATETIME),
       FieldType::MultiPicklist => implode(self::PICKLIST_SEPARATOR, $value),
+      FieldType::Reference => $value instanceof Record ? $value->Id : $value,
       default => $value,
     };
   }

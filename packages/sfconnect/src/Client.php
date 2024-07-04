@@ -43,7 +43,7 @@ class Client implements ClientInterface
   }
 
   /** @param "GET"|"POST"|"PUT"|"PATCH"|"DELETE" $method */
-  private function makeRawRequest(string $method, string $endpoint, array $options = []): ResponseInterface
+  protected function makeRawRequest(string $method, string $endpoint, array $options = []): ResponseInterface
   {
     $url = $this->baseUrl . $endpoint;
     $options['headers'] = ($options['headers'] ?? []) + $this->credentials->getAuthHeaders();

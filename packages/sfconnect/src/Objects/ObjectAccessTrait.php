@@ -6,9 +6,7 @@ namespace Averay\SfConnect\Objects;
 trait ObjectAccessTrait
 {
   /** @param array<string,mixed> $values */
-  public function __construct(protected readonly array $values)
-  {
-  }
+  public function __construct(protected readonly array $values) {}
 
   public function __get(string $name): mixed
   {

@@ -15,8 +15,7 @@ readonly class QueryHandle implements \IteratorAggregate
     public bool $done,
     public ?string $nextRecordsUrl,
     private ClientInterface $client,
-  ) {
-  }
+  ) {}
 
   public function getIterator(): Traversable
   {

@@ -47,7 +47,7 @@ namespace Averay\SfConnect\Objects;
  * @property-read string $DailyWorkflowEmails
  * @property-read string $HourlyTimeBasedWorkflow
  */
-readonly final class OrganizationLimits
+final readonly class OrganizationLimits
 {
   use ObjectAccessTrait;
 }

@@ -11,8 +11,7 @@ final class PicklistValue implements \JsonSerializable
     public readonly bool $active,
     public readonly bool $defaultValue,
     public readonly mixed $validFor,
-  ) {
-  }
+  ) {}
 
   public function jsonSerialize(): array
   {

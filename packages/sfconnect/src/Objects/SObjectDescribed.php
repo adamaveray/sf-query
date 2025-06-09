@@ -6,7 +6,7 @@ namespace Averay\SfConnect\Objects;
 /**
  * @property-read array<string,SObjectField> $fields
  */
-readonly final class SObjectDescribed extends SObject
+final readonly class SObjectDescribed extends SObject
 {
   public function __construct(array $values)
   {

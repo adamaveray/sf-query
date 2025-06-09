@@ -64,7 +64,7 @@ use Averay\SfConnect\Data\SObjectFieldType;
  * @property-read bool $updateable
  * @property-read bool $writeRequiresMasterRead
  */
-readonly final class SObjectField extends AbstractObject implements \JsonSerializable
+final readonly class SObjectField extends AbstractObject implements \JsonSerializable
 {
   public function __construct(array $values)
   {

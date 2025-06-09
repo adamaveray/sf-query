@@ -8,7 +8,7 @@ use Averay\SfConnect\Client;
 use Averay\SfConnect\ClientInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-readonly final class Instance implements InstanceInterface
+final readonly class Instance implements InstanceInterface
 {
   private string $hostname;
   private string $version;

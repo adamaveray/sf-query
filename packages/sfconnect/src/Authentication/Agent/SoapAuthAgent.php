@@ -9,7 +9,7 @@ use Averay\SfConnect\Config\InstanceInterface;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-readonly final class SoapAuthAgent implements AuthAgentInterface
+final readonly class SoapAuthAgent implements AuthAgentInterface
 {
   private const LOGIN_URL = 'https://login.salesforce.com';
 

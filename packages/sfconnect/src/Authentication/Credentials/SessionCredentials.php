@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Averay\SfConnect\Authentication\Credentials;
 
-readonly final class SessionCredentials implements CredentialsInterface
+final readonly class SessionCredentials implements CredentialsInterface
 {
   public function __construct(
     #[\SensitiveParameter] public string $sessionId,
@@ -11,8 +11,7 @@ readonly final class SessionCredentials implements CredentialsInterface
     public array $userInfo,
     public bool $passwordExpired,
     public \DateTimeInterface $dateCreated,
-  ) {
-  }
+  ) {}
 
   public function getDateExpires(): ?\DateTimeInterface
   {

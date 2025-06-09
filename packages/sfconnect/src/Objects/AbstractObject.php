@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Averay\SfConnect\Objects;
 
-readonly abstract class AbstractObject
+abstract readonly class AbstractObject
 {
   use ObjectAccessTrait {
     ObjectAccessTrait::__isset as private __objectAccessIsset;

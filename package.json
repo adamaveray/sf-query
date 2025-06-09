@@ -1,7 +1,8 @@
 {
   "scripts": {
     "format": "bun x codeformat fix",
-    "lint": "bun x codeformat check"
+    "lint": "bun x codeformat check",
+    "test": "php vendor/bin/phpunit"
   },
   "devDependencies": {
     "@averay/codeformat": "^0.2.0",

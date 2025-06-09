@@ -7,6 +7,7 @@ use Averay\SfConnect\Client;
 use Averay\SfConnect\Objects\Record;
 use Averay\SfConnect\Objects\SObject;
 use Averay\SfConnect\Objects\SObjectField;
+use Symfony\Contracts\HttpClient\ResponseStreamInterface;
 use function Averay\SfConnect\formatUrl;
 use function Averay\SfConnect\getRecordId;
 use function Averay\SfConnect\getSObjectName;
@@ -122,6 +123,25 @@ trait RecordsSlice
         'blobField' => $blobField,
       ]),
     )->getContent();
+  }
+
+  /**
+   * @return array{ headers: string[][], stream: ResponseStreamInterface }
+   */
+  public function streamRecordBlob(string|SObject $sobject, string|Record $record, string $blobField): array
+  {
+    $response = $this->makeRawRequest(
+      'GET',
+      formatUrl('/sobjects/{sobject}/{id}/{blobField}', [
+        'sobject' => getSObjectName($sobject),
+        'id' => getRecordId($record),
+        'blobField' => $blobField,
+      ]),
+    );
+    return [
+      'headers' => $response->getHeaders(),
+      'stream' => $this->httpClient->stream($response),
+    ];
   }
 
   /**

@@ -6,6 +6,7 @@ namespace Averay\SfConnect\Slices;
 use Averay\SfConnect\Objects\Record;
 use Averay\SfConnect\Objects\SObject;
 use Averay\SfConnect\Objects\SObjectField;
+use Symfony\Contracts\HttpClient\ResponseStreamInterface;
 
 /** @psalm-require-extends \Averay\SfConnect\ClientInterface */
 interface RecordsInterface
@@ -64,4 +65,16 @@ interface RecordsInterface
    * @see https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_sobject_blob_retrieve.htm
    */
   public function getRecordBlob(string|SObject $sobject, string|Record $record, string $blobField): string;
+
+  /**
+   * @return array{ headers: string[][], stream: ResponseStreamInterface }
+   * @see https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_sobject_blob_retrieve.htm
+   */
+  public function streamRecordBlob(string|SObject $sobject, string|Record $record, string $blobField): array;
+
+  /**
+   * @param string|resource $blob
+   * @see https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/dome_sobject_insert_update_blob.htm
+   */
+  public function uploadRecordBlob(string $blobField, mixed $blob): array;
 }

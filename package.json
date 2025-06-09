@@ -5,10 +5,12 @@
     "lint:codeformat": "bun x codeformat check",
     "lint:monorepo": "php vendor/bin/monorepo-builder validate",
     "test": "php vendor/bin/phpunit",
-    "monorepo-merge": "php vendor/bin/monorepo-builder merge && bun x --bun prettier --write composer.json"
+    "monorepo-merge": "php vendor/bin/monorepo-builder merge && bun x --bun prettier --write composer.json",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@averay/codeformat": "^0.2.0",
-    "@prettier/plugin-php": "^0.22.4"
+    "@prettier/plugin-php": "^0.22.4",
+    "husky": "^9.1.7"
   }
 }

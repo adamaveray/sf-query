@@ -14,6 +14,15 @@ readonly final class SessionCredentials implements CredentialsInterface
   ) {
   }
 
+  public function getDateExpires(): ?\DateTimeInterface
+  {
+    $seconds = $this->userInfo['sessionSecondsValid'] ?? null;
+    if ($seconds === null) {
+      return null;
+    }
+    return \DateTimeImmutable::createFromInterface($this->dateCreated)->add(new \DateInterval('PT' . $seconds . 'S'));
+  }
+
   public function getAuthHeaders(): array
   {
     return ['Authorization: Bearer ' . $this->sessionId];

@@ -68,4 +68,13 @@ class Client implements ClientInterface
       throw new HttpException\RedirectionException($response);
     }
   }
+
+  /**
+   * @param string|resource $blob
+   * @see https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/dome_sobject_insert_update_blob.htm
+   */
+  public function uploadRecordBlob(string $blobField, mixed $blob): array
+  {
+    // TODO
+  }
 }

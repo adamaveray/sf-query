@@ -10,6 +10,7 @@ readonly final class SessionCredentials implements CredentialsInterface
     public string $userId,
     public array $userInfo,
     public bool $passwordExpired,
+    public \DateTimeInterface $dateCreated,
   ) {
   }
 

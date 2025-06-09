@@ -46,6 +46,7 @@ readonly final class SoapAuthAgent implements AuthAgentInterface
     );
 
     $response = $this->makeRequest($payload);
+    $now = new \DateTimeImmutable();
     $authData = $response['soapenv_Body']['loginResponse']['result'];
 
     return [
@@ -55,6 +56,7 @@ readonly final class SoapAuthAgent implements AuthAgentInterface
         userId: $authData['userId'],
         userInfo: array_map(static fn(mixed $value): mixed => self::convertValue($value), $authData['userInfo']),
         passwordExpired: self::convertValue($authData['passwordExpired'], false),
+        dateCreated: $now,
       ),
     ];
   }

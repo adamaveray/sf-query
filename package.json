@@ -1,8 +1,11 @@
 {
   "scripts": {
     "format": "bun x codeformat fix",
-    "lint": "bun x codeformat check",
-    "test": "php vendor/bin/phpunit"
+    "lint": "bun run lint:codeformat && bun run lint:monorepo",
+    "lint:codeformat": "bun x codeformat check",
+    "lint:monorepo": "php vendor/bin/monorepo-builder validate",
+    "test": "php vendor/bin/phpunit",
+    "monorepo-merge": "php vendor/bin/monorepo-builder merge && bun x --bun prettier --write composer.json"
   },
   "devDependencies": {
     "@averay/codeformat": "^0.2.0",

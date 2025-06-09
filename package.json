@@ -1,10 +1,10 @@
 {
   "scripts": {
-    "format": "npx codeformat fix",
-    "lint": "npx codeformat check"
+    "format": "bun x codeformat fix",
+    "lint": "bun x codeformat check"
   },
   "devDependencies": {
-    "@averay/codeformat": "^0.1.14",
-    "@prettier/plugin-php": "^0.21.0"
+    "@averay/codeformat": "^0.2.0",
+    "@prettier/plugin-php": "^0.22.4"
   }
 }

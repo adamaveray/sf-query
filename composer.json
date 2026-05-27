@@ -10,10 +10,10 @@
     "symfony/http-client": "^7.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "^10.5",
+    "phpunit/phpunit": "^13.1",
     "roave/security-advisories": "dev-latest",
-    "symfony/var-dumper": "^7.3",
-    "symplify/monorepo-builder": "^11.2"
+    "symfony/var-dumper": "^8.0",
+    "symplify/monorepo-builder": "^12.7"
   },
   "replace": {
     "averay/sfconnect": "self.version"

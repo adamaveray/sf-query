@@ -1,3 +1,7 @@
+**This repository has been migrated to Codeberg: [codeberg.org/adamaveray/sf-query](https://codeberg.org/adamaveray/sf-query)**
+
+---
+
 # SF-Query
 
 A collection of strongly-typed PHP libraries for interacting with the Salesforce REST API.
